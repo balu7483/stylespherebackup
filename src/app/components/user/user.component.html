@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<div>
+<h3 style="font-family: Poppins; text-align: center; padding: 25px;">Users</h3>
+</div>
+<table class="table">
+    <tr>
+        <th class="thead">Id.</th>
+        <th class="thead">First Name</th>
+        <th class="thead">Last Name</th>
+        <th class="thead">Email</th>
+        <th class="thead">Date Of Birth</th>
+        <th class="thead">Country</th>
+        <th class="thead">Edit</th>
+        <th class="thead">Delete</th>
+    </tr> 
+    <tr *ngFor="let data of userData">
+        <th class="tdata">{{data.id}}</th>
+        <th class="tdata">{{data.firstName}}</th>
+        <th class="tdata">{{data.lastName}}</th>
+        <th class="tdata">{{data.email}}</th>
+        <th class="tdata">{{data.dob}}</th>
+        <th class="tdata">{{data.country}}</th>
+        <th class="tdata"><button  mat-button (click)="edit(data.id)"><mat-icon>edit</mat-icon></button></th>
+        <th class="tdata"><button  mat-button (click)="delete(data.id)"><mat-icon>delete</mat-icon></button></th>
+    </tr>
+  

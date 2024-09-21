@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+<h3 style="text-align: center; font-family: Poppins; padding: 25px;">Products</h3>
+<table class="table">
+    <tr>
+        <th class="thead">Id.</th>
+        <th class="thead">Name</th>
+        <th class="thead">Brand</th>
+        <th class="thead">Gender</th>
+        <th class="thead">Type</th>
+        <th class="thead">Material Type</th>
+        <th class="thead">Date</th>
+        <th class="thead">Design</th>
+        <th class="thead">Color</th>
+        <th class="thead">Size</th>
+        <th class="thead">ImageUrl</th>
+        <th class="thead">Edit</th>
+        <th class="thead">Delete</th>
+    </tr>
+    <tr *ngFor="let product of productData">
+        <th class="tdata">{{product.productId}}</th>
+        <th class="tdata">{{product.productName}}</th>
+        <th class="tdata">{{product.productBrand}}</th>
+        <th class="tdata">{{product.productGender}}</th>
+        <th class="tdata">{{product.productType}}</th>
+        <th class="tdata">{{product.productMaterialType}}</th>
+        <th class="tdata">{{product.productDate}}</th>
+        <th class="tdata">{{product.productDesign}}</th>
+        <th>
+        <ul>
+            <li *ngFor="let c of product.productColor">{{c}}</li>
+        </ul>
+        </th>
+        <th>
+            <ul>
+                <li *ngFor="let s of product.productSize">{{s}}</li>
+            </ul>
+        </th>
+        <th>
+            <ul>
+                <li *ngFor="let i of product.productImageUrl">{{i}}</li>
+            </ul>
+        </th>
+        <th><button mat-button color="primary" (click)="editProduct(product.productId)"><mat-icon>edit</mat-icon></button></th>
+        <th><button mat-button color="primary"><mat-icon >delete</mat-icon></button></th>
+    </tr>
+</table>
+
+
